@@ -6,7 +6,7 @@ import { cartState } from '../store';
 
 
 const Header = () => {
-  const { totalQuantity } = useRecoilValue(cartState);
+  const { totalQty } = useRecoilValue(cartState);
 
   return (
     <header className="header">
@@ -14,7 +14,7 @@ const Header = () => {
         <h1>Proton's Merch</h1>
       </Link>
       <Link className="ui button primary" to="cart">
-        Cart: {totalQuantity}
+        Cart: {totalQty}
       </Link>
     </header>
   );
