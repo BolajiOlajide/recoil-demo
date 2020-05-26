@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useAddItem } from '../store';
+
 
 const ids = [
   "apple",
@@ -18,6 +20,8 @@ const ids = [
 const products = ids.map((id, index) => ({ id, price: index + 1 }));
 
 const Catalog = () => {
+  const addItem = useAddItem();
+
   return (
     <div className="catalog">
       <div className="products">
@@ -28,7 +32,7 @@ const Catalog = () => {
             </h4>
             <button
               className="ui button positive mini"
-              onClick={() => console.log(p)}
+              onClick={() => addItem(p)}
             >
               Add
             </button>

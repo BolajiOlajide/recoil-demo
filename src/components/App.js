@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { RecoilRoot } from 'recoil';
 
 // components
 import Header from './Header';
@@ -13,15 +14,16 @@ const App = () => {
   }, []);
 
   return (
-    <Router basename="/">
-      <Header />
+    <RecoilRoot>
+      <Router basename="/">
+        <Header />
 
-      <Switch>
-        <Route exact path="/" component={Catalog} />
-        <Route exact path="/cart" component={Cart} />
-      </Switch>
-      <p>Recoil Demo | Ecommerce</p>
-    </Router>
+        <Switch>
+          <Route exact path="/" component={Catalog} />
+          <Route path="/cart" component={Cart} />
+        </Switch>
+      </Router>
+    </RecoilRoot>
   );
 }
 
