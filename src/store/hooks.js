@@ -21,8 +21,10 @@ export const useAddItem = () => {
 
 export const useRemoveItem = () => {
   const [items, setItems] = useRecoilState(cart);
+
   return (product) => {
-    setItems(items.filter((item) => item.id !== product.id));
+    const updatedItems = items.filter((item) => item.id !== product.id)
+    setItems(updatedItems);
   };
 };
 

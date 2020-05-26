@@ -6,6 +6,7 @@ const CartButtons = ({ item }) => {
   const add = useAddItem();
   const remove = useRemoveItem();
   const decrease = useDecreaseItem();
+
   return (
     <div className="ui buttons mini">
       <button onClick={() => decrease(item)} className="ui button">
